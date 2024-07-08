@@ -84,7 +84,7 @@ const CreatePodcast = () => {
                   </FormLabel>
                   <FormControl>
                     <Input
-                      className="input-class focus-visible:ring-orange-1"
+                      className="input-class focus-visible:ring-offset-orange-1"
                       placeholder="WM Pro Podcast"
                       {...field}
                     />
@@ -101,7 +101,7 @@ const CreatePodcast = () => {
               <Select onValueChange={(value: string) => setVoiceType(value)}>
                 <SelectTrigger
                   className={cn(
-                    "text-16 w-full border-none bg-black-1 text-gray-1"
+                    "text-16 w-full border-none bg-black-1 text-gray-1 focus-visible:ring-offset-orange-1"
                   )}
                 >
                   <SelectValue
@@ -121,7 +121,11 @@ const CreatePodcast = () => {
                   ))}
                 </SelectContent>
                 {voiceType && (
-                  <audio className="hidden" src={`/${voiceType}.mp3`} />
+                  <audio
+                    className="hidden"
+                    src={`/${voiceType}.mp3`}
+                    autoPlay
+                  />
                 )}
               </Select>
             </div>
@@ -136,7 +140,7 @@ const CreatePodcast = () => {
                   </FormLabel>
                   <FormControl>
                     <Textarea
-                      className="input-class focus-visible:ring-orange-1"
+                      className="input-class focus-visible:ring-offset-orange-1"
                       placeholder="Write a short podcast description"
                       {...field}
                     />
@@ -151,7 +155,7 @@ const CreatePodcast = () => {
             <GeneratePodcast
               setAudioStorageId={setAudioStorageId}
               setAudio={setAudioUrl}
-              voiceType={voiceType}
+              voiceType={voiceType!}
               audio={audioUrl}
               voicePrompt={voicePrompt}
               setVoicePrompt={setVoicePrompt}

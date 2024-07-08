@@ -1,6 +1,7 @@
 import LeftSidebar from "@/components/LeftSidebar";
 import MobileNav from "@/components/MobileNav";
 import RightSidebar from "@/components/RightSidebar";
+import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -23,7 +24,7 @@ export default function RootLayout({
           <div className="mx-auto flex w-full max-w-5xl flex-col max-sm:px-4">
             <div className="flex h-16 items-center justify-between md:hidden">
               <Image
-                src="/icons/logo/svg"
+                src="/icons/logo.svg"
                 width={30}
                 height={30}
                 alt="menu icon"
@@ -31,7 +32,7 @@ export default function RootLayout({
               <MobileNav />
             </div>
             <div className="flex flex-col md:pb-14">
-              Toaster
+              <Toaster />
               {children}
             </div>
           </div>
